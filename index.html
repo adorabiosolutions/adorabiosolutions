@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adora Bio Solutions</title>
     <style>
-        * {
+       * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -181,47 +181,90 @@
         }
 
         .service-card {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid rgba(16,185,129,0.8);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
             scroll-margin-top: 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #0ea5e9, #10b981);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.03) 0%, transparent 70%);
+            transition: transform 0.5s;
+        }
+
+        .service-card:hover::before {
+            transform: translate(-25%, -25%);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(to right, rgba(14,165,233,0.4) 0%, rgba(16,185,129,0.4) 100%);
+            width: 80px;
+            height: 80px;
+            background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(14, 165, 233, 0.15);
+            border: 3px solid transparent;
+            background-image: linear-gradient(white, white), linear-gradient(135deg, #0ea5e9, #10b981);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25);
         }
 
         .service-icon img {
-            width: 35px;
-            height: 35px;
+            width: 50px;
+            height: 50px;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #2c3e50;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card p {
             color: #5a6c7d;
             line-height: 1.8;
+            position: relative;
+            z-index: 1;
         }
 
         .stats {
@@ -259,7 +302,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            scroll-margin-top: 70px;
+            scroll-margin-top: 90px;
         }
 
         .about-image {
@@ -295,7 +338,7 @@
             background: #2c3e50;
             color: white;
             padding: 60px 2rem 30px;
-            scroll-margin-top: 70px;
+            scroll-margin-top: 90px;
         }
 
         .footer-content {
@@ -370,7 +413,7 @@
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="Untitled2.jpg" alt="Adora Bio Solutions">
+                    <img src="logo.png" alt="Adora Bio Solutions">
                 </div>
             </div>
             <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -394,89 +437,89 @@
     <section class="services" id="services">
         <h2 class="section-title">Our Services</h2>
         <div class="services-grid">
-            <div class="service-card" id="clinical-development">
+            <div class="service-card" id="feasibility-assessment">
                 <div class="service-icon">
-                    <img src="icons/emoji_u1f52c.svg" alt="🔬">
+                    <img src="icons/emoji_u1f50d.svg" alt="🔍">
                 </div>
-                <h3>Clinical Development</h3>
-                <p>Comprehensive support for vaccine clinical trials from Phase I through Phase III, ensuring regulatory compliance and scientific rigor.</p>
+                <h3>Feasibility Assessment</h3>
+                <p>Conduct market research to evaluate the demand for specific vaccines. Assess scientific literature to identify potential vaccine candidates. Analyze regulatory landscapes and funding opportunities. Strategic analysis of biotech business plans and clinical development plans, integrating activities.</p>
             </div>
-            <div class="service-card" id="regulatory-strategy">
+            <div class="service-card" id="strategic-partnerships">
                 <div class="service-icon">
-                    <img src="icons/emoji_u1f4cb.svg" alt="📋">
+                    <img src="icons/emoji_u1f91d.svg" alt="🤝">
                 </div>
-                <h3>Regulatory Strategy</h3>
-                <p>Expert navigation of FDA, EMA, and global regulatory pathways to accelerate your vaccine approval timeline.</p>
+                <h3>Strategic Partnerships and Collaborations</h3>
+                <p>Facilitate connections with academic institutions, pharmaceutical companies, and research organizations to foster collaboration. Support joint ventures and partnerships in vaccine innovation and development.</p>
             </div>
-            <div class="service-card" id="manufacturing">
-                <div class="service-icon">
-                    <img src="icons/emoji_u2697.svg" alt="⚗️">
-                </div>
-                <h3>Manufacturing Consultation</h3>
-                <p>Optimization of vaccine production processes, quality control, and scale-up strategies for commercial success.</p>
-            </div>
-            <div class="service-card" id="market-access">
-                <div class="service-icon">
-                    <img src="icons/emoji_u1f310.svg" alt="🌐">
-                </div>
-                <h3>Market Access</h3>
-                <p>Strategic planning for vaccine commercialization, pricing strategies, and global market penetration.</p>
-            </div>
-            <div class="service-card" id="safety-monitoring">
-                <div class="service-icon">
-                    <img src="icons/emoji_u1f6e1.svg" alt="🛡️">
-                </div>
-                <h3>Safety Monitoring</h3>
-                <p>Post-market surveillance and pharmacovigilance programs to ensure ongoing vaccine safety and efficacy.</p>
-            </div>
-            <div class="service-card" id="innovation-advisory">
-                <div class="service-icon">
-                    <img src="icons/emoji_u1f4a1.svg" alt="💡">
-                </div>
-                <h3>Innovation Advisory</h3>
-                <p>Guidance on emerging vaccine technologies, platforms, and therapeutic approaches to stay ahead of the curve.</p>
-            </div>
-            <div class="service-card" id="preclinical-research">
+            <div class="service-card" id="preclinical-development">
                 <div class="service-icon">
                     <img src="icons/emoji_u1f9ec.svg" alt="🧬">
                 </div>
-                <h3>Preclinical Research</h3>
-                <p>Expert guidance on animal studies, immunogenicity testing, and toxicology assessments for vaccine candidates.</p>
+                <h3>Preclinical Development Support</h3>
+                <p>Consultancy on preclinical research and toxicology studies. Assist in designing and conducting preclinical studies, including in vitro and in vivo testing. Provide expertise in immunological assays and characterization of vaccine candidates, including immunological analysis and biomarkers.</p>
             </div>
-            <div class="service-card" id="formulation-development">
+            <div class="service-card" id="target-product-profile">
                 <div class="service-icon">
-                    <img src="icons/emoji_u1f9ea.svg" alt="🧪">
+                    <img src="icons/emoji_u1f3af.svg" alt="🎯">
                 </div>
-                <h3>Formulation Development</h3>
-                <p>Advanced formulation strategies including adjuvant selection, stability testing, and delivery system optimization.</p>
+                <h3>Target Product Profile Support</h3>
+                <p>Support in developing a Target Product Profile (TPP) and the necessary clinical steps to achieve it.</p>
             </div>
-            <div class="service-card" id="supply-chain">
+            <div class="service-card" id="clinical-development-strategy">
                 <div class="service-icon">
-                    <img src="icons/emoji_u1f4e6.svg" alt="📦">
+                    <img src="icons/emoji_u1f52c.svg" alt="🔬">
                 </div>
-                <h3>Supply Chain Management</h3>
-                <p>End-to-end supply chain solutions for vaccine distribution, cold chain logistics, and inventory management.</p>
+                <h3>Clinical Development Strategy</h3>
+                <p>Support the design of clinical trial protocols, including Phase I, II, and III studies. Consultancy on clinical development, including, but not limited to, writing and critically reviewing clinical study protocols (CTPs), clinical development plans (CDPs), and documentation for the submission of studies to national and supranational regulatory authorities (such as EMA, FDA, and others). Guidance in selecting appropriate endpoints and patient populations for trials. Providing support on immunological analysis and determination of objectives and endpoints, the quality and validation aspects of the required tests, and reporting of the results. Consultancy on interaction with Contract Research Organizations (CROs), which are responsible for the operational aspects of studies. </p>
             </div>
-            <div class="service-card" id="health-economics">
+            <div class="service-card" id="safety-evaluation">
+                <div class="service-icon">
+                    <img src="icons/emoji_u1f6e1.svg" alt="🛡️">
+                </div>
+                <h3>Safety Evaluation</h3>
+                <p>Advice on safety evaluation of vaccines and pharmaceutical products, both before, during, and after clinical development.</p>
+            </div>
+            <div class="service-card" id="regulatory-compliance">
+                <div class="service-icon">
+                    <img src="icons/emoji_u1f4cb.svg" alt="📋">
+                </div>
+                <h3>Regulatory Compliance</h3>
+                <p>Advise on regulatory requirements for vaccine development in various jurisdictions (e.g., FDA, EMA). Assist in preparing submission documents for Investigational New Drug (IND) applications and marketing authorization.</p>
+            </div>
+            <div class="service-card" id="healthcare-economics">
                 <div class="service-icon">
                     <img src="icons/emoji_u1f4b0.svg" alt="💰">
                 </div>
-                <h3>Health Economics</h3>
-                <p>Cost-effectiveness analysis, budget impact modeling, and value proposition development for payers and providers.</p>
+                <h3>Healthcare Economics Analysis and Pricing</h3>
+                <p>Advice on healthcare economics analysis and pricing of vaccines and pharmaceutical products.</p>
             </div>
-            <div class="service-card" id="medical-affairs">
+            <div class="service-card" id="manufacturing-support">
                 <div class="service-icon">
-                    <img src="icons/emoji_u1f468.svg" alt="👨‍⚕️">
+                    <img src="icons/emoji_u2699.svg" alt="⚙️">
                 </div>
-                <h3>Medical Affairs</h3>
-                <p>Scientific communication, KOL engagement, medical education programs, and publication strategy support.</p>
+                <h3>Manufacturing Support</h3>
+                <p>Provide recommendations on vaccine production techniques and scaling up manufacturing processes. Assist in establishing quality control measures and compliance with Good Manufacturing Practices (GMP).</p>
             </div>
-            <div class="service-card" id="quality-assurance">
+            <div class="service-card" id="post-marketing-surveillance">
                 <div class="service-icon">
-                    <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/2714_fe0f/512.gif" alt="✓">
+                    <img src="icons/emoji_u1f4ca.svg" alt="📊">
                 </div>
-                <h3>Quality Assurance</h3>
-                <p>GMP compliance, quality systems implementation, audits, and continuous improvement for manufacturing excellence.</p>
+                <h3>Post-Marketing Surveillance</h3>
+                <p>Develop strategies for monitoring vaccine safety and efficacy post-approval. Assist in collecting and analyzing data from post-marketing studies and adverse event reports.</p>
+            </div>
+            <div class="service-card" id="manuscripts-support">
+                <div class="service-icon">
+                    <img src="icons/emoji_u1f4dd.svg" alt="📝">
+                </div>
+                <h3>Writing and Evaluating Manuscripts Support</h3>
+                <p>Support in writing and evaluating manuscripts for publication in a peer-reviewed scientific journal, related to (pre)clinical, toxicological, and epidemiological studies, including writing overviews or reviews.</p>
+            </div>
+            <div class="service-card" id="educational-programs">
+                <div class="service-icon">
+                    <img src="icons/emoji_u1f393.svg" alt="🎓">
+                </div>
+                <h3>Educational and Training Programs</h3>
+                <p>Offer training sessions for healthcare professionals and stakeholders on vaccine development trends and best practices. Provide educational resources and workshops focused on immunization strategies and public health implications.</p>
             </div>
         </div>
     </section>
@@ -523,18 +566,18 @@
             <div>
                 <h3>Services</h3>
                 <div class="footer-links services-list">
-                    <a href="#clinical-development">Clinical Development</a>
-                    <a href="#regulatory-strategy">Regulatory Strategy</a>
-                    <a href="#manufacturing">Manufacturing</a>
-                    <a href="#market-access">Market Access</a>
-                    <a href="#safety-monitoring">Safety Monitoring</a>
-                    <a href="#innovation-advisory">Innovation Advisory</a>
-                    <a href="#preclinical-research">Preclinical Research</a>
-                    <a href="#formulation-development">Formulation Development</a>
-                    <a href="#supply-chain">Supply Chain</a>
-                    <a href="#health-economics">Health Economics</a>
-                    <a href="#medical-affairs">Medical Affairs</a>
-                    <a href="#quality-assurance">Quality Assurance</a>
+                    <a href="#feasibility-assessment">Feasibility Assessment</a>
+                    <a href="#strategic-partnerships">Strategic Partnerships</a>
+                    <a href="#preclinical-development">Preclinical Development</a>
+                    <a href="#target-product-profile">Target Product Profile</a>
+                    <a href="#clinical-development-strategy">Clinical Development</a>
+                    <a href="#safety-evaluation">Safety Evaluation</a>
+                    <a href="#regulatory-compliance">Regulatory Compliance</a>
+                    <a href="#healthcare-economics">Healthcare Economics</a>
+                    <a href="#manufacturing-support">Manufacturing Support</a>
+                    <a href="#post-marketing-surveillance">Post-Marketing Surveillance</a>
+                    <a href="#manuscripts-support">Manuscripts Support</a>
+                    <a href="#educational-programs">Educational Programs</a>
                 </div>
             </div>
             <div>
