@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adora Bio Solutions</title>
+	<link rel="icon" type="image/png" href="favicon.png">
     <style>
        * {
             margin: 0;
@@ -307,19 +308,22 @@
 
         .about-image {
             width: 100%;
-            height: 400px;
+            height: 500px;
             background: linear-gradient(to right, #0ea5e9 0%, #10b981 100%);
-            border-radius: 15px;
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 4rem;
+            padding: 10px;
         }
 
         .about-image img {
-            width: 150px;
-            height: 150px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .about-content h2 {
@@ -369,6 +373,19 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+        }
+		
+		.contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+		
+		contact-item i {
+            color: #10b981;
+            width: 20px;
         }
 
         @media (min-width: 768px) {
@@ -547,7 +564,7 @@
 
     <section class="about" id="about">
         <div class="about-image">
-            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f3e5/512.gif" alt="🏥">
+            <img src="about.jpg" alt="Adora Bio Solutions">
         </div>
         <div class="about-content">
             <h2>About Adora Bio Solutions</h2>
@@ -583,15 +600,25 @@
             <div>
                 <h3>Contact</h3>
                 <div class="footer-links">
-                    <a href="mailto:vassilev@adorabiosolutions.com">Email: vassilev@adorabiosolutions.com</a>
-                    <a href="tel:+15551234567">Phone: +1 (555) 123-4567</a>
-                    <p style="margin-top: 0.5rem;">Address: 123 Medical Plaza, Boston, MA</p>
+                    <a href="mailto:vassilev@adorabiosolutions.com">
+						<i class="fas fa-envelope"></i>
+						vassilev@adorabiosolutions.com
+					</a>
+                    <a href="tel:+32472629007">
+						<i class="fas fa-phone"></i>
+						+32 472-629007
+					</a>
+                    <div class="contact-item">
+						<i class="fas fa-map-marker-alt"></i>
+						Route de Genval 141, 1380 Lasne, Belgium
+					</div>
                 </div>
             </div>
             <div>
                 <h3>Follow Us</h3>
                 <div class="footer-links">
                     <a href="https://linkedin.com/in/ventzi-vassilev" target="_blank">LinkedIn</a>
+					<a href="https://pubmed.ncbi.nlm.nih.gov/?term=Vassilev+V&cauthor_id=40568086" target="_blank">PubMed</a>
                 </div>
             </div>
         </div>
