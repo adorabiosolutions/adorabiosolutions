@@ -108,7 +108,7 @@
             }
 
             nav.active {
-                top: 70px;
+                top: 112px;
             }
 
             nav ul {
@@ -149,6 +149,7 @@
         }
 
         .cta-button {
+			font-family: Tahoma, 'Segoe UI', Geneva, Verdana, sans-serif;
             background: white;
             color: #0ea5e9;
             padding: 1rem 2.5rem;
@@ -159,6 +160,8 @@
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             animation: fadeInUp 0.8s ease-out 0.4s backwards;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .cta-button:hover {
@@ -191,7 +194,7 @@
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-            scroll-margin-top: 120px;
+            scroll-margin-top: 130px;
             position: relative;
             overflow: hidden;
         }
@@ -313,7 +316,6 @@
         .about-image {
             width: 100%;
             height: 500px;
-            background: linear-gradient(to right, #0ea5e9 0%, #10b981 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -326,7 +328,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 15px;
-            border: 5px solid white;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
@@ -501,7 +502,7 @@
     <section class="hero" id="home">
         <h1>Leading Vaccine & Immunotherapeutics Consulting</h1>
         <p>Expert guidance for pharmaceutical innovation and regulatory compliance</p>
-        <button class="cta-button">Schedule Consultation</button>
+        <a href="mailto:info@adorabiosolutions.com?subject=Consultation%20Request&body=Hello%2C%0D%0A%0D%0AI%20would%20like%20to%20schedule%20a%20consultation%20regarding..." class="cta-button">Schedule Consultation</a>
     </section>
 
     <section class="services" id="services">
